@@ -53,7 +53,9 @@ h1.ui.header {
   margin-top: 7em !important;
 }
 
-.cg__results {
+.cg__results,
+.cg__blog,
+.cg__college {
   background: #f5f5f5;
 }
 
