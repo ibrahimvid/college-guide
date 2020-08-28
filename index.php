@@ -1,35 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    include 'header.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Font-->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400&display=swap" rel="stylesheet">
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/styles.css">
-
-
-    <title>College Guide</title>
-</head>
-
-
-<body>
-    <main class="cg__main segment">
-
-        <!-- Nav Bar -->
-        <div class="ui fixed menu">
-            <a class="header item" href="#"><i class="large graduation cap icon"></i></a>
-            <a class="item" href="#services">Services</a>
-            <a class="item" href="#about">About</a>
-            <a class="item" href="#contact">Contact</a>
-            <a class="item" href="/blog.html">Blog</a>
-            <div class="ui right menu">
-                <a class="item" href="/portal.html">Student Portal</a>
-            </div>
-        </div>
+<main class="cg__main segment">
 
         <!-- Hero Section -->
         <section class="ui text container center aligned cg__header-content">
@@ -38,10 +11,9 @@
             <br>
             <hr>
             <br>
-            <form class="ui form container" action="/results.html">
-                <label for="degree">
-                    <p class="ui inverted header">I want to do my: </p>
-                </label> <br>
+            <form class="ui form container" action="results.php" method="POST">
+                <p class="ui inverted header">I want to do my: </p>
+                <br>
                 <div class="inline fields">
                     <div class="ui selection dropdown">
                         <input type="hidden" name="degree" id="degree">
@@ -49,13 +21,12 @@
                         <div class="default text">Degree</div>
                         <div class="menu">
                             <div class="item" value="Certificate">Certificate</div>
-                            <div class="item" value="Bachelor">Bachelor</div>
-                            <div class="item" value="Master">Master</div>
+                            <div class="item" value="Bachelor of Science">Bachelor</div>
+                            <div class="item" value="Master of Science">Master</div>
                         </div>
                     </div>
-                    <label for="course"></label>
                     <input class="text container" type="text" placeholder="Search Courses..." name="course" id="course">
-                    <button type="submit" class="ui large compact primary right labeled icon button cg__button">Search<i
+                    <button type="submit" class="ui large compact primary right labeled icon button cg__button" name="submit-search">Search<i
                             class="caret right icon"></i></button>
 
                 </div>
@@ -118,13 +89,26 @@
             <div class="row">
                 <div class="twelve wide tablet eight wide computer column">
                     <h2 class="ui header">ABOUT US</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore natus dignissimos, eveniet
-                        incidunt quisquam laboriosam. Illum officiis vel, dolore provident aspernatur illo quis non
-                        totam corporis neque architecto tempora accusamus voluptas porro, delectus error veniam!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cumque eius, molestias facilis
-                        aperiam dolorem debitis libero repudiandae labore. Fuga cupiditate suscipit, cumque molestias
-                        debitis culpa repudiandae cum enim, atque, esse minima! Alias, cupiditate culpa quisquam sunt
-                        similique fuga accusamus.</p>
+                    <p>Universities in the U.S. constantly dominate the top-ranking list, making them the most prestigious and
+                        reputable schools in the world. There are plenty of options to choose from, all over the U.S., where you can
+                        pursue a Bachelor&#39;s, Master&#39;s, or Certification at a top-ranked and globally recognized institution.</p>
+
+                        <p>Academic Course is way different than a search engine. Where you are blindfolded with advertisements and
+                        non-researched data and have to suffer a long way the moment you enter the university. This will not only
+                        minimize the stress but give you the overview of the university. This will provide all the contact information
+                        and in development will see honest reviews that are posted about the university. We are here to solve a basic
+                        problem but a major one amongst parents and students. This will not only be a breakthrough but also provide
+                        universities an opportunity to showcase honest and proper information to their students.</p>
+
+                        <p>Making the decision to pursue Masters/Advanced degree is not one to be taken lightly. Not only is it a serious
+                        financial investment, it&#39;s a choice that can affect your future career and pay grade as well. Although the best
+                        graduate school for you may depend on a host of factors including your chosen area of study, it&#39;s a good idea
+                        to be aware of the graduate schools that stand out as the most prestigious.</p>
+
+                        <p>Although there are many ways to evaluate graduate schools, for our list of the best graduate schools from
+                        reputed rating institutions, we decided to focus on a number of factors including class size, level of degree
+                        awarded, prestige of the faculty, and program rankings. We present the schools here in according to the
+                        number of points awarded.</p>
                 </div>
 
             </div>
@@ -140,21 +124,21 @@
             </div>
             <div class="row">
                 <div class="ten wide column">
-                    <form class="ui form">
+                    <form class="ui form" action="includes/contact.inc.php" method="POST">
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
-                                <input type="text" placeholder="Name">
+                                <input type="text" name="name" placeholder="Name">
                             </div>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="envelope icon"></i>
-                                <input type="email" placeholder="Email">
+                                <input type="email" name="email" placeholder="Email">
                             </div>
                         </div>
                         <div class="field">
-                            <textarea placeholder="Message" rows="10"></textarea>
+                            <textarea placeholder="Message" name="message" rows="10"></textarea>
                         </div>
                         <button type="submit" class="ui primary button sc-button">SEND</button>
                     </form>

@@ -56,15 +56,13 @@ h1.ui.header {
 .cg__results,
 .cg__blog,
 .cg__college {
-  background: #f5f5f5;
+  background: #f5f5f5 !important;
 }
 
-.cg__portal {
-  background: #636363;
-  background: -webkit-linear-gradient(to right, #a2ab58, #636363);
-  background: linear-gradient(to right, #a2ab58, #636363);
-  position: relative;
-  /* background-color: #f5f5f5; */
+.cg__portal,
+.cg__profile,
+.cg__admin {
+  background: #f5f5f5 !important;
   min-height: 100vh;
 }
 
